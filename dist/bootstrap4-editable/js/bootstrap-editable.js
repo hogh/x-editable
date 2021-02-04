@@ -2929,7 +2929,8 @@ $(function(){
 
         activate: function() {
             if(this.$input.is(':visible')) {
-                var inp = this.$input; setTimeout(function(){ inp.focus(); },100);
+                var inp = this.$input;
+		setTimeout(function(){ inp.focus(); },300);
 //                if (this.$input.is('input,textarea') && !this.$input.is('[type="checkbox"],[type="range"],[type="number"],[type="email"]')) {
                 if (this.$input.is('input,textarea') && !this.$input.is('[type="checkbox"],[type="range"]')) {
                     $.fn.editableutils.setCursorPosition(this.$input.get(0), this.$input.val().length);
