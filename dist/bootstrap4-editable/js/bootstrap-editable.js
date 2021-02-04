@@ -2451,7 +2451,7 @@ To create your own input you can inherit from this class.
        **/
        activate: function() {
            if(this.$input.is(':visible')) {
-               this.$input.focus();
+               var inp = this.$input; setTimeout(function(){ inp.focus(); },100);
            }
        },
 
@@ -2930,7 +2930,7 @@ $(function(){
         activate: function() {
             if(this.$input.is(':visible')) {
                 var inp = this.$input;
-		setTimeout(function(){ inp.focus(); },300);
+		setTimeout(function(){ inp.focus(); },100);
 //                if (this.$input.is('input,textarea') && !this.$input.is('[type="checkbox"],[type="range"],[type="number"],[type="email"]')) {
                 if (this.$input.is('input,textarea') && !this.$input.is('[type="checkbox"],[type="range"]')) {
                     $.fn.editableutils.setCursorPosition(this.$input.get(0), this.$input.val().length);
@@ -3001,7 +3001,8 @@ $(function(){
 
         clear: function() {
            this.$clear.hide();
-           this.$input.val('').focus();
+           this.$input.val('')
+	   var inp = this.$input; setTimeout(function(){ inp.focus(); },100);    
         }
     });
 
@@ -3365,7 +3366,7 @@ $(function(){
         },
         
        activate: function() {
-           this.$input.first().focus();
+           var inp = this.$input.first(); setTimeout(function(){ inp.focus(); },100);    
        },
        
        autosubmit: function() {
@@ -3592,7 +3593,7 @@ Range (inherit from number)
             });  
         },
         activate: function() {
-            this.$input.focus();
+            var inp = this.$input; setTimeout(function(){ inp.focus(); },100);    
         }         
     });
     Range.defaults = $.extend({}, $.fn.editabletypes.number.defaults, {
@@ -4623,7 +4624,8 @@ $(function(){
        },       
        
        activate: function() {
-           this.$input.siblings('.combodate').find('select').eq(0).focus();
+	   var inp = this.$input.siblings('.combodate').find('select').eq(0);
+	   setTimeout(function(){ inp.focus(); },100);    
        },
        
        /*
